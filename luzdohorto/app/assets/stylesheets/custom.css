@@ -1,6 +1,5 @@
 /* CSS DO SEARCH */
 
-$cor_principal = #f2f5a9;
 
 .search-form .form-group {
   float: right !important;
@@ -397,9 +396,9 @@ label:hover:before {
 }
 
 .panel-cc > .panel-heading {
-  color: $cor_principal;
-  background-color: $cor_principal;
-  border-color: $cor_principal;
+  color:  #f2f5a9;
+  background-color:  #f2f5a9;
+  border-color:  #f2f5a9;
 }
 .panel-center-login {
   margin: 10rem;
