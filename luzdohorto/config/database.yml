@@ -35,21 +35,26 @@ default: &default
   pool: 5
   timeout: 5000
   host: localhost
-  username: postgres
-  password: root
+  
 
 
 development:
-  <<: *default
-  database: ammv-development
+  adapter: postgresql
+  database: lzdhorto_development
+  pool: 5
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: ammv-test
+  adapter: postgresql
+  database: lzdhorto_test
+  pool: 5
+  timeout: 5000
 
 production:
-  <<: *default
-  database: ammv-production
+  adapter: postgresql
+  database: lzdhorto_production
+  pool: 5
+  timeout: 5000
