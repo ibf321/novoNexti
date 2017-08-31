@@ -38,7 +38,7 @@
     <% @colabs.each do |colab| %>
       <tr style="font-size: 15px">
         <td><%= colab.colaborador.nomecompleto %></td>
-        <td><%= @quantidadeCadastro.fetch_values(colab.colaborador_id) %></td>
+        <td><%= @quantidadeCadastro %></td>
         <!-- <td><%= colab.colaborador_id %></td> -->        
       </tr>
     <% end %>

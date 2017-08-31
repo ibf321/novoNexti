@@ -1,4 +1,4 @@
-<div class="login-home cimg">
+<div class="jumbotron jumbotron-fluid">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="container  col-md-offset-4 col-md-4 panel-center-login" >
     <br>
@@ -17,7 +17,7 @@
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon">
-              <i class="ls-ico-user" style="width: auto"></i>
+              <i class="glyphicon glyphicon-user" style="width: auto"></i>
             </span>
             <%= f.text_field :login, autofocus: true, placeholder: "Usuário", class: "form-control" %>
           </div>
@@ -25,7 +25,7 @@
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon">
-              <i class="ls-ico-shaft-right" style="width: auto"></i>
+              <i class="glyphicon glyphicon-asterisk" style="width: auto"></i>
             </span>
             <%= f.password_field :password, autocomplete: "off", placeholder: "Senha", class: "form-control" %>
           </div>
@@ -39,6 +39,6 @@
       </div>
     </div>
   </div>
-</div>
+
 
 

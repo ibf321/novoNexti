@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822194411) do
+ActiveRecord::Schema.define(version: 20170831192121) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -25,22 +28,22 @@ ActiveRecord::Schema.define(version: 20170822194411) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admin_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "cadastros", force: :cascade do |t|
-    t.integer  "id_cliente_coelce"
-    t.integer  "digito_verificador_cliente_coelce"
-    t.integer  "codigo_ocorrencia"
+    t.string   "id_cliente_coelce"
+    t.string   "digito_verificador_cliente_coelce"
+    t.string   "codigo_ocorrencia"
     t.date     "data_ocorrencia"
-    t.float    "valor"
-    t.integer  "parcelas"
+    t.string   "valor"
+    t.string   "parcelas"
     t.text     "livre"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.integer  "user_id"
-    t.index ["user_id"], name: "index_cadastros_on_user_id"
+    t.index ["user_id"], name: "index_cadastros_on_user_id", using: :btree
   end
 
   create_table "cadastros_relatorios", force: :cascade do |t|
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 20170822194411) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.integer  "cadastro_id"
-    t.index ["relatorio_id"], name: "index_cadastros_relatorios_on_relatorio_id"
+    t.index ["relatorio_id"], name: "index_cadastros_relatorios_on_relatorio_id", using: :btree
   end
 
   create_table "colaboradors", force: :cascade do |t|
@@ -66,7 +69,7 @@ ActiveRecord::Schema.define(version: 20170822194411) do
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["user_id"], name: "index_colaboradors_on_user_id"
+    t.index ["user_id"], name: "index_colaboradors_on_user_id", using: :btree
   end
 
   create_table "colabs", force: :cascade do |t|
@@ -74,8 +77,8 @@ ActiveRecord::Schema.define(version: 20170822194411) do
     t.integer  "colaborador_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["cadastro_id"], name: "index_colabs_on_cadastro_id"
-    t.index ["colaborador_id"], name: "index_colabs_on_colaborador_id"
+    t.index ["cadastro_id"], name: "index_colabs_on_cadastro_id", using: :btree
+    t.index ["colaborador_id"], name: "index_colabs_on_colaborador_id", using: :btree
   end
 
   create_table "instituicos", force: :cascade do |t|
@@ -115,9 +118,13 @@ ActiveRecord::Schema.define(version: 20170822194411) do
     t.datetime "updated_at",                          null: false
     t.string   "username"
     t.integer  "role",                   default: 0
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "cadastros_relatorios", "relatorios"
+  add_foreign_key "colaboradors", "users"
+  add_foreign_key "colabs", "cadastros"
+  add_foreign_key "colabs", "colaboradors"
 end

@@ -4965,12 +4965,10 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
   color: inherit;
-  background-color: #eee;
+  background: url(luzbanner2.png);
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4991,12 +4989,13 @@ a.badge:focus {
   border-radius: 6px;
 }
 .jumbotron .container {
-  max-width: 100%;
+  
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
     padding-top: 48px;
     padding-bottom: 48px;
+    background-size: cover;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
@@ -5007,6 +5006,12 @@ a.badge:focus {
   .jumbotron .h1 {
     font-size: 63px;
   }
+}
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+  background-size: cover;
 }
 .thumbnail {
   display: block;

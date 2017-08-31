@@ -11,12 +11,12 @@ class Cadastro < ActiveRecord::Base
   	end
 
   	def self.search(query, user)
-    	if query.present? and user.role == "admin"
-      		where(['id_cliente_coelce like :query OR
-            	valor like :query OR livre like :query', query: "%#{query}%"])
+      if query.present? and user.role == "admin"
+      		where(['id_cliente_coelce LIKE :query OR
+            	valor LIKE :query OR livre LIKE :query', query: "%#{query}%"])
     	elsif query.present?
-    		where(:user_id => user.id).where(['id_cliente_coelce like :query OR
-            	valor like :query ', query: "%#{query}%"])
+    		where(:user_id => user.id).where(['id_cliente_coelce LIKE :query OR
+            	valor LIKE :query OR livre LIKE :query', query: "#{query}"])
     	elsif user.role == "admin"
     		all
     	else

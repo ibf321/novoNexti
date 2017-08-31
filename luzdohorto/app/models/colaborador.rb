@@ -3,4 +3,6 @@ class Colaborador < ApplicationRecord
   has_many :colabs
   has_many :colaborador, through: :colabs 
   paginates_per 20
+
+  validates_presence_of :nomecompleto, :telefone, :endereco, :nomereduzido
 end
