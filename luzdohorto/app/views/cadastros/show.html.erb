@@ -1,0 +1,42 @@
+<div class="cadastro" style="font-size: 15px">
+  <div class="page-header"> <br> <br> <h1 align="center"> Informações </h1></div>
+  <div class="panel-group">
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Id Cliente:</b>  <%= @cadastro.id_cliente_coelce %> </div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Digito Verificador Cliente Coelce:</b> <%= @cadastro.digito_verificador_cliente_coelce %></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Código Ocorrência:  </b> <%= @cadastro.codigo_ocorrencia %></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Data Ocorrência:</b> <%= @cadastro.data_ocorrencia.strftime("%d / %m / %Y")%></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Valor:</b> R$ <%= @cadastro.valor %></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Parcelas:</b>   <%= @cadastro.parcelas %></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Protocolo:</b>  <%= @cadastro.livre %> </i> </div>
+    </div>
+    <% if !@cadastro.colabs.blank? %>
+        <div class="panel panel-primary class">
+          <div class="panel-body"><b>Colaborador:</b>  <%= @cadastro.colabs[0].colaborador.nomereduzido %> </i> </div>
+        </div>
+    <% end %>
+    <br>
+    <td>
+    <center>
+      <%=link_to 'Voltar', root_path, class: 'btn btn-info'%>
+      <%=link_to 'Cadastrar Novamente', new_cadastro_path, class: 'btn btn-success'%>
+      <!-- <% if current_user.role == "admin" %>
+      <%= link_to 'Excluir', cadastro_path(@cadastro), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o registro?' } %> -->
+    </center>
+    </td>
+  </div>
+</div>
+
+<% end %>

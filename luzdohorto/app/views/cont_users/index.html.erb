@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 align="center">Lista de Usuários</h1>
+        </div>
+      </div>
+    </div>
+        
+  <br>
+  <br>
+  <br>
+<div class="row">
+    <div class="col-lg-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>  
+            <th width="150"><p align="center">Usuário</p></th>
+            <th width="150"><p align="center">Tipo de Usuário</p></th>
+            <th width="150"><p align="center">E-Mail</p></th>                                         
+          </tr> 
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr style="font-size: 15px">              
+            <td align="center"><%= user.username %></td>
+            <td align="center"><%= user.role %></td>                                                        
+            <td align="center"><%= user.email %></td>  
+          </td>
+        </tr>
+          <% end %> 
+      </tbody>                
+    </table>
+   
+  </div>

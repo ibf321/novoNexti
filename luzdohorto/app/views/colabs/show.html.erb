@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cadastro:</strong>
+  <%= @colab.cadastro %>
+</p>
+
+<p>
+  <strong>Colaborador:</strong>
+  <%= @colab.colaborador %>
+</p>
+
+<%= link_to 'Edit', edit_colab_path(@colab) %> |
+<%= link_to 'Back', colabs_path %>

@@ -1,0 +1,52 @@
+<%= form_for(instituico) do |f| %>
+  <% if instituico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(instituico.errors.count, "error") %> prohibited this instituico from being saved:</h2>
+
+      <ul>
+      <% instituico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form>
+  <br>
+  <div class="ls-form row container-fluid">
+    <div class="page-header">
+      <h2 align="center">Instituição</h2>
+    </div>
+    <br>
+    <fieldset>
+      <div class="cadastro">
+        <div class="row well">
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Nome Instituição</b>
+            <p class="ls-label-info">Digite o nome da Instituição</p>
+            <%= f.text_field :nome_instituicao, {:minlength => 20, :maxlength => 20,required: true}%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Id Cliente Parceiro</b>
+            <p class="ls-label-info">Dígite o Id do Cliente Parceiro</p>
+            <%= f.number_field :id_cliente_parceira, {in: -1...1000000000, required: true}%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Código Produto </b>
+            <p class="ls-label-info">Insira o Código Produto</p>
+            <%= f.number_field :codigo_produto, {in: -1...10000, required: true}%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Código Empresa Parceira</b>
+            <p class="ls-label-info">Dígite o código da empresa parceira</p>
+            <%= f.number_field :codigo_empresa_parceira, {in: -1...100, required: true}%>
+          </label>
+          <br>
+          <div class="footer" align="center">
+            <%= f.submit "Salvar", class:"btn btn-primary"%>
+            <%=link_to 'Cancelar', instituicos_path, class: 'btn btn-warning'%>
+          </div>
+        </fieldset>
+      </form>   
+    </div>
+  </div>
+  <% end %>

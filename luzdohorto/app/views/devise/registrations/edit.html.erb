@@ -1,0 +1,45 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= devise_error_messages! %>
+
+<div class="editar_perfil">
+  <div class="row well">
+    <form action="" class="ls-form row" >
+      <fieldset>
+        <legend><h1>Editar Perfil</h1></legend>
+        <div>
+          <label class="ls-label">
+            <b class="ls-label-text">Email</b>
+            <%= f.text_field :email, autofocus: true %>
+          </label>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <div>
+          <label class="ls-label">
+            <b class="ls-label-text">Nova Senha </b><p class="ls-label">(Deixe em branco se não quiser mudar)</p>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </label> 
+        </div>
+        <div>
+          <label class="ls-label">
+            <b class="ls-label-text">Inserir Nova Senha Novamente</b>
+            <% if @minimum_password_length %>
+            <% end %>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </label>
+        </div>
+        <label class="ls-label">
+          <b class="ls-label-text">Senha Atual</b><p class="ls-label" >(Precisamos da Senha atual para confirmar as modificações) </p>
+          <%= f.password_field :current_password %>
+        </label>
+      </fieldset>
+      <div class="page-header" align="center">
+        <%= f.submit "Editar", class: "btn btn-sm btn-primary" %>
+        <%= link_to "Cancelar Conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-sm btn-danger' %>
+      </div>
+    </form>    
+  </div>
+</div>
+</fieldset>
+<% end %>

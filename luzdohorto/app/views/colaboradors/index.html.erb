@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 align="center">Colaboradores</h1>
+        </div>
+      </div>
+    </div>
+    
+   <div class="row">
+    <div class="col-lg-40">
+      <table class="table table-striped">
+         <thead>
+            <tr>
+              <th>Nome Completo</th>
+              <th>Telefone</th>
+              <th> </th>
+              <th>Nome reduzido</th>                          
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @colaboradors.each do |colaborador| %>
+              <tr style="font-size: 15px">
+                <td><%= colaborador.nomecompleto %></td>
+                
+                <td><%= colaborador.telefone %></td>
+                <td> </td>
+                <td><%= colaborador.nomereduzido %></td>
+                
+                <td><%= link_to 'Ver', colaborador, class: 'btn btn-info btn-sm' %>
+                <%= link_to 'Editar', edit_colaborador_path(colaborador),class: 'btn btn-success btn-sm' %>
+                <!-- <%if current_user.role == "admin" %>
+                  <%= link_to 'Excluir', colaborador, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class:'btn btn-danger btn-sm' %></td>
+                <%end%> -->
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+<center><%= paginate @colaboradors %></center>
+<br>
+
+<center><%= link_to 'Cadastrar novo Colaborador', new_colaborador_path, class: 'btn btn-primary' %>
+  <% if current_user.role == "admin"%>
+    <%= link_to 'Relatório dos Colaboradores', colabs_path, class: 'btn btn-default' %>
+  <% end %>
+
+</center>

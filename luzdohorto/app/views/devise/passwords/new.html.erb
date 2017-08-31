@@ -1,0 +1,41 @@
+
+
+<div class="login-home cimg">
+
+	
+	   <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+  		
+    <div class="panel-heading login-color">
+    	<div class="text-center login-color-text"><%= image_tag("luz.png") %></div>
+    </div>
+
+       <center><h1>Esqueceu Sua Senha ?</h1>  </center> 
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  		<%= devise_error_messages! %>
+      <center>
+      	<div class="panel-body">
+        	<div class="form-group">
+          		<div class="input-group"><%= f.label :email %><br />
+    				<%= f.text_field :username, autofocus: true %>
+    			</div>
+    		</div>
+    	</div>
+    	<div style="width: 500px" style="background-color: grey">
+    		<b><p>Serão enviadas instruções para recuperar sua senha para o e-mail cadastrado no sistema.</p></b>
+    		
+    		<br>
+    		<%= link_to "Voltar", new_session_path(resource_name),class: 'btn btn-success btn-lg' %>
+    		<%= f.submit "Recuperar senha",class: 'btn btn-warning btn-lg' %>
+    	</div>
+
+     		
+		<% end %>
+	</center>
+</div>

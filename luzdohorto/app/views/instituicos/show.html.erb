@@ -1,0 +1,23 @@
+<div class="cadastro" style="font-size: 15px">
+  <div class="page-header"> <br> <br> <h1 align="center"> Informações </h1></div>
+  <div class="panel-group">
+     
+  	<div class="panel panel-primary class">
+      <div class="panel-body"><b>Nome Instituição:</b> <%= @instituico.nome_instituicao %></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Id Cliente Parceira:</b> <%= @instituico.id_cliente_parceira %></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Código do Produto:</b> <%= @instituico.codigo_produto %></div>
+    </div> 
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Código da Empresa Parceira:</b> <%= @instituico.codigo_empresa_parceira %></div>
+    </div> 
+    <br>
+    <td>
+      <%=link_to 'Voltar', instituicos_path, class: 'btn btn-info'%> 
+      <%= link_to 'Excluir', instituico_path(@instituico), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o registro?' } %>
+    </td>
+  </div>
+</div>

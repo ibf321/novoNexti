@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Luz do Horto</title>
+  
+  <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <%= favicon_link_tag 'icon.png' %>
+  <%=stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%=javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%=csrf_meta_tags %>
+</head>
+<% if user_signed_in? %>
+   <%= render 'layouts/user_navbar' %>
+<% end %>
+<body bgcolor="#F2F5A9">
+  <div id="content">
+    <% if notice.present? %>
+     <center><div class="alert alert-success" role="alert" style="width: 700px">
+        <p id="notice" style="font-size: 15px"><%= notice %></p>
+      </div></center>
+    <% end %>
+    <% if alert.present? %>
+      <center><div class="alert alert-danger" role="alert" style="width: 700px">
+        <p id="notice" style="font-size: 15px"><p id="alert"><%= alert %></p>
+      </div></center>
+    <% end %>
+
+   
+  </div>
+   <%= yield %>
+</body>
+
+    <br>
+    <div class="bottom-bar">
+      <center>
+      <hr class="linha " width="100%">
+      Copyright © 2017 NExTI <a href="mailto:webmaster@example.com"><b class="teste">nextipro2@gmail.com</b></a></center>
+    </div>
+    <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; opacity: 1; cursor: pointer;"><i class="fa fa-angle-up"></i></div>
+</html>

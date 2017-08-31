@@ -1,0 +1,37 @@
+<%= form_for(@relatorio) do |f| %>
+<% if @relatorio.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@relatorio.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+  <ul>
+    <% @relatorio.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<br>
+<div class="ls-form row container-fluid">
+  <div class="page-header">
+    <h1 align="center">Relatório</h1>
+  </div>
+  <br>
+  <fieldset>
+    <div class="relatorio">
+      <div class="row well">
+        <b class="ls-label-text">Data Inicial</b>
+        <p class="ls-label-info">Selecione a Data Inicial</p>
+        <%= f.date_select  :data_inicio, :order => [:day, :month, :year], :use_month_names=>["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]%>
+        <br> <br>
+        <b class="ls-label-text">Data Final</b>
+        <p class="ls-label-info">Selecione a Data Final</p>
+        <%= f.date_select :data_final, :order => [:day, :month, :year], :use_month_names=>["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]%>
+        <br>
+        <div class="btn" align="center">
+          <%=f.submit "Salvar", class:"btn btn-primary"%>
+          <%=link_to 'Cancelar', root_path, class: 'ls-btn-primary-danger'%>
+        </div>
+      </fieldset>       
+    </div>
+  </div>
+  <% end %>

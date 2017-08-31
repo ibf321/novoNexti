@@ -1,0 +1,27 @@
+<%= form_for(colab) do |f| %>
+  <% if colab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(colab.errors.count, "error") %> prohibited this colab from being saved:</h2>
+
+      <ul>
+      <% colab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cadastro_id %>
+    <%= f.text_field :cadastro_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :colaborador_id %>
+    <%= f.text_field :colaborador_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

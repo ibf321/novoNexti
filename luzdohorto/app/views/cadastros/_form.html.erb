@@ -1,0 +1,73 @@
+<%= form_for(cadastro) do |f| %>
+<% if cadastro.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+  <ul>
+    <% cadastro.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<form>
+  <br>
+  <div class="ls-form row container-fluid">
+    <div class="page-header">
+      <h1 align="center">Doador</h1>
+    </div>
+    <br>
+    <fieldset>
+      <div class="cadastro">
+        <div class="row well">
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">ID</b>
+            <p class="ls-label-info" style="font-size: 12px">Digite o ID do cliente ENEL</p>
+            <%= f.number_field :id_cliente_coelce, :max =>9999999999, required: true%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Digito Verificador</b>
+            <p class="ls-label-info" style="font-size: 12px">Digite o dígito verificador do Cliente ENEL</p>
+            <%= f.number_field :digito_verificador_cliente_coelce, :max => 9, required: true%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Código Ocorrência</b>
+            <p class="ls-label-info" style="font-size: 12px">Digite o código de ocorrência</p>
+            <%= f.number_field :codigo_ocorrencia, :max => 99,required: true %>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Data Ocorrência</b>
+            <p class="ls-label-info" style="font-size: 12px">Insira a data de Ocorrência</p>
+            <br>
+            <%= f.date_select :data_ocorrencia, :order => [:day, :month, :year], :use_month_names=>["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Valor</b>
+            <p class="ls-label-info" style="font-size: 12px">Dígite o Valor</p>
+            <%= f.number_field :valor, :step => 0.01, required: true%>
+          </label>
+          <label class="ls-label col-md-12 ">
+            <b class="ls-label-text">Parcelas</b>
+            <p class="ls-label-info" style="font-size: 12px">Dígite o número de Parcelas</p>
+            <%= f.number_field :parcelas, required: true%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Protocolo</b>
+            <p class="ls-label-info" style="font-size: 12px">Caso haja, digite o número de protocolo</p>
+            <%= f.text_area:livre%>
+          </label>
+          <label class="ls-label col-md-12">
+            <b class="ls-label-text">Colaborador</b>
+            <p class="ls-label-info" style="font-size: 12px">Caso haja, selecione</p>
+            <%= select("colaborador", "colaborador_id", Colaborador.all.collect {|p| [ p.nomereduzido, p.id ] }, { include_blank: true, prompt: true})  %>
+          </label>
+          <br>
+          <div class="actions" align="center">
+            <%= f.submit "Salvar", class:"btn btn-primary"%>
+            <%=link_to 'Cancelar', root_path, class: 'btn btn-warning'%>
+          </div>
+        </fieldset>
+      </form>   
+    </div>
+  </div>
+
+  <% end %>

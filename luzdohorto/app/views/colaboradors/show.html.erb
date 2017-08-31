@@ -1,0 +1,27 @@
+<div class="cadastro" style="font-size: 15px">
+  <div class="page-header"> <br> <br> <h1 align="center">Informações do Colaborador </h1></div>
+<div class="panel-group">
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Nome Completo: </b> <%= @colaborador.nomecompleto %> </div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Telefone:</b> <%= @colaborador.telefone %></div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Endereco: </b> <%= @colaborador.endereco %> </div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Nome Reduzido: </b> <%= @colaborador.nomereduzido %> </div>
+    </div>
+    <div class="panel panel-primary class">
+      <div class="panel-body"><b>Cadastrado Por: </b> <%= @colaborador.user.username %> </div>
+    </div>
+    <br>
+   <center>
+     <td>
+        <%= link_to 'Editar', edit_colaborador_path(@colaborador), class:"btn btn-success" %>
+        <%= link_to 'Voltar', colaboradors_path, class:"btn btn-warning" %>
+     </td>
+  </center>
+  </div>
+</div>
