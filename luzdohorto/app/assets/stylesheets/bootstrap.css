@@ -4991,6 +4991,8 @@ a.badge:focus {
   padding-left: 0;
   border-radius: 0;
   background-size: cover;
+  background: url(luzbanner.png);
+
 
 }
 .container .jumbotron,
