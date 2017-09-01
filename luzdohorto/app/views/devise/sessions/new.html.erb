@@ -1,5 +1,5 @@
-<div class="jumbotron">
-  <div class="container-fluid">
+<body class="fundo" >
+ <div class="container-fluid">
   <div class="container  col-md-offset-4 col-md-4 panel-center-login" >
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="panel panel-default">
@@ -23,6 +23,7 @@
             <%= f.password_field :password, autocomplete: "off", placeholder: "Senha", class: "form-control" %>
           </div>
           <div align="center"> 
+          <br>
           <%= f.submit "ENTRAR",class: 'btn btn-primary btn-lg btn-block'%>   
           <%end%>
      
@@ -31,5 +32,6 @@
       </div>
       </div>
     </div>
+  </div>   
   </div> <!-- div container -->
   

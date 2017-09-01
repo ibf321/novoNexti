@@ -99,6 +99,13 @@ body {
   padding: 10px;
 
 }
+.fundo{
+  height: 100%;
+  padding: 10px;
+  background-image: url(luzbanner.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 /*=== 2. Anchor Link ===*/
 a {
   color: #aaaaaa;
