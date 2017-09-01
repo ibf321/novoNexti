@@ -1,14 +1,7 @@
-<div class="jumbotron jumbotron-fluid">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="jumbotron">
+  <div class="container-fluid">
   <div class="container  col-md-offset-4 col-md-4 panel-center-login" >
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br>
-    <br>
-    <br>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="panel panel-default">
       <div class="panel-heading login-color">
         <div class="text-center login-color-text"><%= image_tag("luz.png") %></div>
@@ -29,16 +22,14 @@
             </span>
             <%= f.password_field :password, autocomplete: "off", placeholder: "Senha", class: "form-control" %>
           </div>
+          <div align="center"> 
+          <%= f.submit "ENTRAR",class: 'btn btn-primary btn-lg btn-block'%>   
+          <%end%>
+     
         </div>
-        
-        <br>
-        <div align="center"> 
-          <%= f.submit "ENTRAR",class: 'btn btn-primary btn-lg btn-block'%>
-        <% end %>
         </div>
       </div>
+      </div>
     </div>
-  </div>
-
-
-
+  </div> <!-- div container -->
+  
