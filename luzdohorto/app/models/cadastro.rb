@@ -3,7 +3,9 @@ class Cadastro < ActiveRecord::Base
 	has_many :colabs
 	paginates_per 20
 
-	def self.assocCadColab (cadastro_id, colaborador_id)
+  validates_presence_of :id_cliente_coelce, :digito_verificador_cliente_coelce, :codigo_ocorrencia, :valor, :parcelas
+	
+  def self.assocCadColab (cadastro_id, colaborador_id)
   		colab = Colab.new
   		colab.cadastro_id = cadastro_id
   		colab.colaborador_id = colaborador_id
