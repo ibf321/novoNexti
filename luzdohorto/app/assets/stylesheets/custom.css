@@ -102,7 +102,6 @@ body {
 .fundo{
   height: 100%;
   padding: 10px;
-  background-image: url(luzbanner.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
