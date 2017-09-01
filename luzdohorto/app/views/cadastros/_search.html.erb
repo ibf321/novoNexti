@@ -2,6 +2,6 @@
 <p style="font-size: 20px">Busca</p>
 <p>( pelo número do cliente, valor ou número de protocolo )</p>
 	<%= form_tag cadastros_path, method: :get, class: 'search' do %>
-  		<%= text_field_tag :q, @search_query %> <%= link_to 'Limpar', root_path,class: 'btn btn-default'%>
+  		<%= text_field_tag :q, @search_query %>  <%= submit_tag "Buscar", :class => 'btn btn-light' %> <%= link_to 'Limpar', root_path,class: 'btn btn-default'%>
 	<% end %>
 </center>
