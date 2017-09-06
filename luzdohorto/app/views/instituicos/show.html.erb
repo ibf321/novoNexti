@@ -1,23 +1,27 @@
 <div class="cadastro" style="font-size: 15px">
-  <div class="page-header"> <br> <br> <h1 align="center"> Informações </h1></div>
-  <div class="panel-group">
-     
-  	<div class="panel panel-primary class">
-      <div class="panel-body"><b>Nome Instituição:</b> <%= @instituico.nome_instituicao %></div>
+  <div class="page-header"> <br> <br> <h1 align="center" class="enunciado"> Informações </h1></div>
+  <div class="container-fluid col-xl-4">
+  <br>     
+  	<div >
+      <div ><b class="textoshow">Nome Instituição:</b>&nbsp;<texto> <%= @instituico.nome_instituicao %></texto></div>
     </div>
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Id Cliente Parceira:</b> <%= @instituico.id_cliente_parceira %></div>
+    <br>
+    <div >
+      <div><b class="textoshow">Id Cliente Parceira:</b>&nbsp;<texto> <%= @instituico.id_cliente_parceira %></texto></div>
     </div>
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Código do Produto:</b> <%= @instituico.codigo_produto %></div>
-    </div> 
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Código da Empresa Parceira:</b> <%= @instituico.codigo_empresa_parceira %></div>
+    <br>
+    <div >
+      <div><b class="textoshow">Código do Produto:</b>&nbsp;<texto> <%= @instituico.codigo_produto %></texto></div>
+    </div>
+    <br> 
+    <div >
+      <div><b class="textoshow">Código da Empresa Parceira:</b>&nbsp;<texto> <%= @instituico.codigo_empresa_parceira %></texto></div>
     </div> 
     <br>
+    <br>
     <td>
-      <%=link_to 'Voltar', instituicos_path, class: 'btn btn-info'%> 
-      <%= link_to 'Excluir', instituico_path(@instituico), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o registro?' } %>
+      <%=link_to 'Voltar', instituicos_path, class: 'btn-sm btn-info'%> 
+      <%= link_to 'Excluir', instituico_path(@instituico), class: 'btn-sm btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o registro?' } %>
     </td>
   </div>
 </div>

@@ -1,7 +1,8 @@
 <center>
-<p style="font-size: 20px">Busca</p>
-<p>( pelo número do cliente, valor ou número de protocolo )</p>
+<p style="font-size: 20px" class="enunciado">Busca</p>
 	<%= form_tag cadastros_path, method: :get, class: 'search' do %>
-  		<%= text_field_tag :q, @search_query %>  <%= submit_tag "Buscar", :class => 'btn btn-light' %> <%= link_to 'Limpar', root_path,class: 'btn btn-default'%>
+  		<%= text_field_tag :q, @search_query ,class: "form-control col-5", placeholder:'Digite onúmero do cliente, valor ou número de protocolo' %>  
+  		<br>
+  		<%= submit_tag "Buscar", :class => 'btn btn-outline-primary btn-sm' %>  <%= link_to 'Limpar', root_path, :class => 'btn btn-outline-info btn-sm'	%>
 	<% end %>
 </center>

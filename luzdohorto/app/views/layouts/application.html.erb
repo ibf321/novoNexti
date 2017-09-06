@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Luz do Horto</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Doppio+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
   <%= favicon_link_tag 'icon.png' %>
   <%=stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%=javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -30,12 +30,11 @@
         <p id="notice" style="font-size: 15px"><p id="alert"><%= alert %></p>
       </div></center>
     <% end %>
-
-   
   </div>
+  <div >
    <%= yield %>
+  </div>
 </body>
-
     <br>
     <div class="bottom-bar">
       <center>

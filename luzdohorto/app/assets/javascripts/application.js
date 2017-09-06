@@ -13,8 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require tether
+//= require popper
+//= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
+
 
 $(function () {
     $( '#table' ).searchable({

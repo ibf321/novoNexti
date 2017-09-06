@@ -11,25 +11,26 @@
 <% end %>
 
 <br>
-<div class="ls-form row container-fluid">
-  <div class="page-header">
-    <h1 align="center">Relatório</h1>
+<div class="container-fluid col-xl-4">
+  <div >
+    <h1 align="center" class="enunciado">Relatório</h1>
   </div>
   <br>
   <fieldset>
-    <div class="relatorio">
-      <div class="row well">
-        <b class="ls-label-text">Data Inicial</b>
-        <p class="ls-label-info">Selecione a Data Inicial</p>
+    <div class="container-fluid col-xl-5">
+      <div>
+        <b class="textolabels">Data Inicial</b>
+        <p class="label-info">Selecione a Data Inicial</p>
         <%= f.date_select  :data_inicio, :order => [:day, :month, :year], :use_month_names=>["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]%>
         <br> <br>
-        <b class="ls-label-text">Data Final</b>
-        <p class="ls-label-info">Selecione a Data Final</p>
+        <b class="textolabels">Data Final</b>
+        <p class="label-info">Selecione a Data Final</p>
         <%= f.date_select :data_final, :order => [:day, :month, :year], :use_month_names=>["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]%>
+        <br>
         <br>
         <div class="btn" align="center">
           <%=f.submit "Salvar", class:"btn btn-primary"%>
-          <%=link_to 'Cancelar', root_path, class: 'ls-btn-primary-danger'%>
+          <%=link_to 'Cancelar', root_path, class: 'btn btn-warning'%>
         </div>
       </fieldset>       
     </div>

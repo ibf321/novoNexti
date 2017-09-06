@@ -1,37 +1,37 @@
-<div class="jumbotron-fluid">
- <div class="container-fluid">
-  <div class="container  col-md-offset-4 col-md-4 panel-center-login" >
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="panel panel-default">
-      <div class="panel-heading login-color">
-        <div class="text-center login-color-text"><%= image_tag("luz.png") %></div>
-      </div>
-      <div class="panel-body">
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon">
-              <i class="glyphicon glyphicon-user" style="width: auto"></i>
-            </span>
-            <%= f.text_field :login, autofocus: true, placeholder: "Usuário", class: "form-control" %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="jumbotron">
+<br>
+<br>
+   <div class="container-fluid col-10">
+    <div class="container  col-md-offset-4 col-md-4" >
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="panel panel-default" style="background-color: transparent;">
+        <div class="panel-heading login-color">
+          <div class="text-center login-color-text"><%= image_tag("luz.png") %></div>
+        </div>
+        <br>
+        <div>
+          <div class="form-group">
+            <div class="input-group">                       
+                <%= f.text_field :login, autofocus: true, placeholder: "Usuário", class: "form-control" %>            
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">            
+              <%= f.password_field :password, autocomplete: "off", placeholder: "Senha", class: "form-control" %>
+            </div>
+            <div align="center"> 
+            <br>
+              <%= f.submit "ENTRAR",class: 'btn btn-primary btn-lg btn-block'%>   
+              <%end%>     
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon">
-              <i class="glyphicon glyphicon-asterisk" style="width: auto"></i>
-            </span>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "Senha", class: "form-control" %>
-          </div>
-          <div align="center"> 
-          <br>
-          <%= f.submit "ENTRAR",class: 'btn btn-primary btn-lg btn-block'%>   
-          <%end%>
-     
-        </div>
-        </div>
       </div>
-      </div>
-    </div>
-  </div>   
-  </div> <!-- div container -->
+</div>
 </div>

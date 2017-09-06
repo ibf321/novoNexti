@@ -1,21 +1,26 @@
-<div class="cadastro" style="font-size: 15px">
-  <div class="page-header"> <br> <br> <h1 align="center">Informações do Colaborador </h1></div>
-<div class="panel-group">
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Nome Completo: </b> <%= @colaborador.nomecompleto %> </div>
+<h1 align="center" class="enunciado">Informações do Colaborador </h1></div>
+<br><br>
+<div class="container-fluid col-xl-4">
+    <div>
+      <div><b class="textoshow">Nome Completo: </b>&nbsp;<texto> <%= @colaborador.nomecompleto %></texto> </div>
     </div>
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Telefone:</b> <%= @colaborador.telefone %></div>
+    <br>
+    <div>
+      <div><b class="textoshow">Telefone:</b>&nbsp; <texto><%= @colaborador.telefone %></texto></div>
     </div>
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Endereco: </b> <%= @colaborador.endereco %> </div>
+    <br>
+    <div>
+      <div><b class="textoshow">Endereço: </b> &nbsp;<texto><%= @colaborador.endereco %></texto> </div>
     </div>
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Nome Reduzido: </b> <%= @colaborador.nomereduzido %> </div>
+    <br>
+    <div >
+      <div ><b class="textoshow">Nome Reduzido:&nbsp; </b><texto> <%= @colaborador.nomereduzido %></texto> </div>
     </div>
-    <div class="panel panel-primary class">
-      <div class="panel-body"><b>Cadastrado Por: </b> <%= @colaborador.user.username %> </div>
+    <br>
+    <div>
+      <div><b class="textoshow">Cadastrado Por: </b>&nbsp;<texto> <%= @colaborador.user.username %></texto> </div>
     </div>
+    
     <br>
    <center>
      <td>

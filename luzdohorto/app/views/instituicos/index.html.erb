@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="page-header">
-          <h1 align="center">Instituição</h1>
+          <h1 align="center" class="enunciado">Instituição</h1>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         <% @instituicos.each do |instituico| %>
-        <tr style="font-size: 15px">
+        <tr class="conteudotabela">
           <td><%= instituico.nome_instituicao %></td>
           <td><%= instituico.id_cliente_parceira %></td>
           <td><%= instituico.codigo_produto %></td>

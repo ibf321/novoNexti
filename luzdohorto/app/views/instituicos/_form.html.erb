@@ -12,39 +12,41 @@
   <% end %>
 <form>
   <br>
-  <div class="ls-form row container-fluid">
-    <div class="page-header">
-      <h2 align="center">Instituição</h2>
+  <div class="container-fluid col-xl-4">
+    <div>
+      <h2 align="center" class="enunciado">Instituição</h2>
     </div>
     <br>
     <fieldset>
-      <div class="cadastro">
-        <div class="row well">
-          <label class="ls-label col-md-12">
-            <b class="ls-label-text">Nome Instituição</b>
-            <p class="ls-label-info">Digite o nome da Instituição</p>
-            <%= f.text_field :nome_instituicao, {:minlength => 20, :maxlength => 20,required: true}%>
-          </label>
-          <label class="ls-label col-md-12">
-            <b class="ls-label-text">Id Cliente Parceiro</b>
-            <p class="ls-label-info">Dígite o Id do Cliente Parceiro</p>
-            <%= f.number_field :id_cliente_parceira, {in: -1...1000000000, required: true}%>
-          </label>
-          <label class="ls-label col-md-12">
-            <b class="ls-label-text">Código Produto </b>
-            <p class="ls-label-info">Insira o Código Produto</p>
-            <%= f.number_field :codigo_produto, {in: -1...10000, required: true}%>
-          </label>
-          <label class="ls-label col-md-12">
-            <b class="ls-label-text">Código Empresa Parceira</b>
-            <p class="ls-label-info">Dígite o código da empresa parceira</p>
-            <%= f.number_field :codigo_empresa_parceira, {in: -1...100, required: true}%>
-          </label>
+        <div class="form-group row">         
+          <label class="col-sm-4 col-form-label font-weight-bold textolabels">Nome Instituição</label>
+          <div class="col-md-8">
+            <%= f.text_field :nome_instituicao, {:minlength => 20, :maxlength => 20,required: true, class: "form-control"}%>
+          </div>
+        </div>
+        <div class="form-group row">         
+          <label class="col-sm-4 col-form-label font-weight-bold textolabels">Id Cliente Parceiro</label>
+            <div class="col-md-8">
+              <%= f.number_field :id_cliente_parceira, {in: -1...1000000000, required: true, class: "form-control"}%>
+            </div>
+         </div> 
+         <div class="form-group row">         
+          <label class="col-sm-4 col-form-label font-weight-bold textolabels">Código Produto </label>
+            <div class="col-md-8">
+              <%= f.number_field :codigo_produto, {in: -1...10000, required: true, class: "form-control"}%>
+            </div>
+          </div>
+          <div class="form-group row">         
+            <label class="col-sm-4 col-form-label font-weight-bold textolabels">Código Empresa Parceira</label>
+             <div class="col-md-8"> 
+                <%= f.number_field :codigo_empresa_parceira, {in: -1...100, required: true, class: "form-control"}%>
+            </div>
+          </div>
           <br>
           <div class="footer" align="center">
             <%= f.submit "Salvar", class:"btn btn-primary"%>
             <%=link_to 'Cancelar', instituicos_path, class: 'btn btn-warning'%>
-          </div>
+          
         </fieldset>
       </form>   
     </div>
