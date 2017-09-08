@@ -37,9 +37,9 @@
   <tbody>
     <% @colabs.each do |colab| %>
       <tr style="font-size: 15px">
-        <td><%= colab.colaborador.nomecompleto %></td>
-        <td><%= @quantidadeCadastro %></td>
-        <!-- <td><%= colab.colaborador_id %></td> -->        
+        <td><%= colab.nomecompleto %></td>
+        <td><%= colab.count %></td>
+               
       </tr>
     <% end %>
   </tbody>
