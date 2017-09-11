@@ -13,29 +13,30 @@
   <br>
   <br>
   <br>
-  <div class="row">
+  <div>
     <div class="col-lg-12">
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr >           
-            <th>Id Cliente ENEL</th>
-            <th>Codigo Ocorrencia</th>
-            <th>Valor</th>
-            <th>Parcelas</th>
+      <table class="table table-striped ">
+        <thead >
+          <tr class="titulotabela">
+            <th class="colunacontador"  style="border-color: black">#</th>           
+            <th style="border-color: black">Id Cliente ENEL</th>
+            <th style="border-color: black">Codigo Ocorrencia</th>
+            <th style="border-color: black">Valor</th>
+            <th style="border-color: black">Parcelas</th>
             <%if current_user.role == "admin" %>
-            <th>Autor</th>
-            <th>Data do Cadastro</th>   
-            <th class="border-right-0">Protocolo</th>
-            <th class="border-0"></th>
-            <th><a href="#" class="btn btn-primary btn-md disabled" role="button" aria-disabled="true">Total de registros <span class="badge badge-warning"> <%= @cadastros.total_count %> </span></a></th>     
+            <th style="border-color: black">Autor</th>
+            <th style="border-color: black">Data do Cadastro</th>   
+            <th class="border-right-1" colspan="2" style="border-color: black">Protocolo</th>            
+            <th style="border-color: black"><a href="#" class="btn btn-primary btn-md disabled" role="button" aria-disabled="true">Total de registros <span class="badge badge-warning"> <%= @cadastros.total_count %> </span></a></th>     
             <% end %>
-
           </tr>
         </thead>
         <tbody>
-          <% @cadastros.each do |cadastro| %>
+       
+          <% @cadastros.each_with_index do |cadastro, x| %>
           <tr>
             <%if current_user.id == cadastro.user_id || policy(@cadastros).index? %>
+            <td class="colunacontador"><%= x + 1 %></td>
             <td class="conteudotabela"><%= cadastro.id_cliente_coelce %></td>
             <td class="conteudotabela"><%= cadastro.codigo_ocorrencia %></td>                  
             <td class="conteudotabela"> R$ <%= cadastro.valor %></td>
@@ -44,8 +45,7 @@
             <td><a href="#" class="btn btn-info btn-sm disabled" role="button" aria-disabled="true"><%= cadastro.user.username%></a></td>
             <td align="center" class="conteudotabela"><%= cadastro.data_ocorrencia.strftime("%d / %m / %Y") %></td>
             <% end %>
-            <td align="center" colspan="1" class="conteudotabela "><%= cadastro.livre %></td>
-            <td></td>
+            <td align="center" colspan="2" class="conteudotabela "><%= cadastro.livre %></td>            
             <td align="center">
               <%= link_to'Ver', cadastro,class: 'btn btn-info btn-sm' %>
               <%= link_to 'Editar', edit_cadastro_path(cadastro),class: 'btn btn-success btn-sm'%>  
@@ -54,7 +54,7 @@
         <% end %>
         <% end %>
       </tbody>
-    </table>
-  <center><%= paginate @cadastros %></center>
-  </div>
+    </table>    
+  </div>  
 </div>
+<div class="col-lg-6"><%= paginate @cadastros %></div>

@@ -1,3 +1,20 @@
+.logo{
+  background-image: url(logonexti.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150px;
+  margin-top:6em;
+  text-align:center;
+  padding-bottom:3em;
+
+}
+
+.colunacontador{
+  background-color: #E0F2F7;
+  text-align: center;
+  border-right-color: black;
+}
+
 .jumbotron {
   background-image: url("luzbanner.png");
   background-size: cover;
@@ -8,7 +25,11 @@
 .conteudotabela{
   font-family: 'Signika', sans-serif;
   font-size: 20px;
-  
+  text-align: center;  
+}
+.titulotabela{
+   background-color: #E0F2F7;
+   border-color: black;
 }
 .textonavbar{
   font-family: 'Signika', sans-serif;
