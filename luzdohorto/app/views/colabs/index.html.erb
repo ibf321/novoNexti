@@ -37,9 +37,13 @@
   <tbody>
     <% @colabs.each do |colab| %>
       <tr style="font-size: 15px">
-        <td><%= colab.nomecompleto %></td>
-        <td><%= colab.count %></td>
-               
+       <% if !@data_inicio.blank? and !@data_final.blank? %>
+          <td><%= colab.nomecompleto %></td>
+          <td><%= colab.count %></td>      
+      <%else%>
+          <td><%= colab.nomecompleto %></td>
+          <td><%= colab.count %></td>
+      <%end%>       
       </tr>
     <% end %>
   </tbody>

@@ -10,10 +10,10 @@
       <table class="table table-striped">
          <thead>
             <tr>
-              <th>Nome Completo</th>
-              <th>Telefone</th>
-              <th> </th>
-              <th>Nome reduzido</th>                          
+              <th style="text-align: center;">Nome Completo</th>
+              <th style="text-align: center;">Telefone</th>
+             
+              <th style="text-align: center;">Nome reduzido</th>                          
             </tr>
           </thead>
 
@@ -22,7 +22,7 @@
               <tr style="font-size: 15px">
                 <td class="conteudotabela"><%= colaborador.nomecompleto %></td>                
                 <td class="conteudotabela"><%= colaborador.telefone %></td>
-                <td> </td>
+               
                 <td class="conteudotabela"><%= colaborador.nomereduzido %></td>                
                 <td class="conteudotabela"><%= link_to 'Ver', colaborador, class: 'btn btn-info btn-sm' %>
                 <%= link_to 'Editar', edit_colaborador_path(colaborador),class: 'btn btn-success btn-sm' %></td>
@@ -42,6 +42,6 @@
       </div>
 <center><%= paginate @colaboradors %></center>
 <br>
-
+</div>
 
 

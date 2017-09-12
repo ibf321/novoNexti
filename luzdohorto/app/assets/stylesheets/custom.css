@@ -1,8 +1,25 @@
+body {
+  height: 100%;
+}
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 50px;
+  /* equal to footer height */
+}
+.paginacao{
+  position: center;
+}
 .logo{
-  background-image: url(logonexti.png);
+  position: absolute;
+  left: 0;
+  bottom: 0;  
+  
+  width: 100%;
+  background-image: url(logofapnexti.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 150px;
+  background-size: 250px;
   margin-top:6em;
   text-align:center;
   padding-bottom:3em;
@@ -30,7 +47,7 @@
 .titulotabela{
    background-color: #E0F2F7;
    border-color: black;
-   text-align: center;
+
 }
 .textonavbar{
   font-family: 'Signika', sans-serif;
