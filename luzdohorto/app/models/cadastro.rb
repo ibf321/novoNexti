@@ -4,6 +4,10 @@ class Cadastro < ActiveRecord::Base
 	paginates_per 20
 
   validates_presence_of :id_cliente_coelce, :digito_verificador_cliente_coelce, :codigo_ocorrencia, :valor, :parcelas
+  validates :id_cliente_coelce, length: { maximum: 10, too_long: "é maior que o aceitável de 10 digitos. Verifique e tente novamente." }
+  validates :digito_verificador_cliente_coelce, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos. Verifique e tente novamente." }
+  validates :codigo_ocorrencia, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos. Verifique e tente novamente." }
+  validates :parcelas, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos. Verifique e tente novamente." }
 	
   def self.assocCadColab (cadastro_id, colaborador_id)
   		colab = Colab.new

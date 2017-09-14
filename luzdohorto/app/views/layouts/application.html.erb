@@ -19,15 +19,21 @@
 <% if user_signed_in? %>
    <%= render 'layouts/user_navbar' %>
 <% end %>
-<body bgcolor="#F2F5A9">
+<body >
   <div id="content">
     <% if notice.present? %>
-     <center><div class="alert alert-success" role="alert" style="width: 700px">
-        <p id="notice" style="font-size: 15px"><%= notice %></p>
+     <center><div class="alert alert-success dismissible" role="alert" style="width: 700px">
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        <p id="notice" style="font-size: 20px" align="center"><%= notice %></p>
       </div></center>
     <% end %>
     <% if alert.present? %>
-      <center><div class="alert alert-danger" role="alert" style="width: 700px">
+      <center><div class="alert alert-danger dismissible" role="alert" style="width: 700px;">
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
         <p id="notice" style="font-size: 15px"><p id="alert"><%= alert %></p>
       </div></center>
     <% end %>

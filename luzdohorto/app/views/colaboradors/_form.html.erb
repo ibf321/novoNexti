@@ -1,14 +1,16 @@
 <%= form_for(colaborador) do |f| %>
   <% if colaborador.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(colaborador.errors.count, "error") %> prohibited this colaborador from being saved:</h2>
+<center>
+  <div id="error_explanation" class="alert alert-danger" style="width: 500px">
+      <h2><%= pluralize(colaborador.errors.count, "erro(s)") %> encontrado(s):</h2>
 
       <ul>
       <% colaborador.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
+  </div>
+</center>
   <% end %>
 
   

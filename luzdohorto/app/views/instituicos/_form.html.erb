@@ -1,14 +1,16 @@
 <%= form_for(instituico) do |f| %>
   <% if instituico.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(instituico.errors.count, "error") %> prohibited this instituico from being saved:</h2>
+<center>
+  <div id="error_explanation" class="alert alert-danger" style="width: 500px">
+      <h2><%= pluralize(instituico.errors.count, "erro(s)") %> encontrado(s):</h2>
 
       <ul>
       <% instituico.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
+  </div>
+</center>
   <% end %>
 <form>
   <br>
@@ -19,27 +21,27 @@
     <br>
     <fieldset>
         <div class="form-group row">         
-          <label class="col-sm-4 col-form-label font-weight-bold textolabels">Nome Instituição</label>
+          <label class="col-sm-4 col-form-label font-weight-bold textolabels">Nome da Instituição</label>
           <div class="col-md-8">
-            <%= f.text_field :nome_instituicao, {:minlength => 20, :maxlength => 20,required: true, class: "form-control"}%>
+            <%= f.text_field :nome_instituicao, class: "form-control"%>
           </div>
         </div>
         <div class="form-group row">         
           <label class="col-sm-4 col-form-label font-weight-bold textolabels">Id Cliente Parceiro</label>
             <div class="col-md-8">
-              <%= f.number_field :id_cliente_parceira, {in: -1...1000000000, required: true, class: "form-control"}%>
+              <%= f.number_field :id_cliente_parceira, {in: -1...1000000000, class: "form-control"}%>
             </div>
          </div> 
          <div class="form-group row">         
           <label class="col-sm-4 col-form-label font-weight-bold textolabels">Código Produto </label>
             <div class="col-md-8">
-              <%= f.number_field :codigo_produto, {in: -1...10000, required: true, class: "form-control"}%>
+              <%= f.number_field :codigo_produto, {in: -1...10000, class: "form-control"}%>
             </div>
           </div>
           <div class="form-group row">         
             <label class="col-sm-4 col-form-label font-weight-bold textolabels">Código Empresa Parceira</label>
              <div class="col-md-8"> 
-                <%= f.number_field :codigo_empresa_parceira, {in: -1...100, required: true, class: "form-control"}%>
+                <%= f.number_field :codigo_empresa_parceira, {in: -1...100,  class: "form-control"}%>
             </div>
           </div>
           <br>
@@ -52,3 +54,4 @@
     </div>
   </div>
   <% end %>
+
