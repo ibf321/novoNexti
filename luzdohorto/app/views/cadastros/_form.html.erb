@@ -3,11 +3,11 @@
 <center>
   <div id="error_explanation" class="alert alert-danger" style="width: 500px">
     <h2><%= pluralize(cadastro.errors.count, "erro(s)") %> encontrado(s):</h2>
-    <ul>
+    
       <% cadastro.errors.full_messages.each do |message| %>
-      <p><%= message %>
+      <p><%= message %></p>
       <% end %>
-    </ul>
+    
   </div>
 </center>
 <% end %>

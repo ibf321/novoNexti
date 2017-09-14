@@ -4,11 +4,11 @@
   <div id="error_explanation" class="alert alert-danger" style="width: 500px">
       <h2><%= pluralize(colaborador.errors.count, "erro(s)") %> encontrado(s):</h2>
 
-      <ul>
+      
       <% colaborador.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+       <p><%= message %></p>
       <% end %>
-      </ul>
+      
   </div>
 </center>
   <% end %>
