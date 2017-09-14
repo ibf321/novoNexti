@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :cadastros
   enum role: {normal_user: 0, admin: 1}
 
+  validates :username, uniqueness: true
+  validates :email, uniqueness: true
+
   
     
   devise :database_authenticatable, :registerable,
