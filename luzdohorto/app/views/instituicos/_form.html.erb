@@ -12,9 +12,10 @@
   </div>
 </center>
   <% end %>
-<form>
+
   <br>
-  <div class="container-fluid col-xl-4">
+  <div class="container-fluid col-xl-4 rounded border border-secondary"  style="background-color: #FAFAFA;">
+  <br>
     <div>
       <h2 align="center" class="enunciado">Instituição</h2>
     </div>
@@ -45,12 +46,14 @@
             </div>
           </div>
           <br>
+
           <div class="footer" align="center">
             <%= f.submit "Salvar", class:"btn btn-primary"%>
             <%=link_to 'Cancelar', instituicos_path, class: 'btn btn-warning'%>
           
         </fieldset>
-      </form>   
+      </form>
+      <br>   
     </div>
   </div>
   <% end %>
