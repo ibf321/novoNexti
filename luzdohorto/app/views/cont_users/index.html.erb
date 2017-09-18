@@ -17,7 +17,8 @@
           <tr>  
             <th width="150"><p align="center">Usuário</p></th>
             <th width="150"><p align="center">Tipo de Usuário</p></th>
-            <th width="150"><p align="center">E-Mail</p></th>                                         
+            <th width="150"><p align="center">E-Mail</p></th> 
+            <th width="150"><p align="center">Editar</p></th>                                            
           </tr> 
         </thead>
         <tbody>
@@ -25,7 +26,8 @@
           <tr class="conteudotabela">              
             <td align="center"><%= user.username %></td>
             <td align="center"><%= user.role %></td>                                                        
-            <td align="center"><%= user.email %></td>  
+            <td align="center"><%= user.email %></td>
+            <td align="center"> <%=link_to 'Editar', "/admin/user/#{user.id}/edit" , class: 'btn btn-warning'%></td>  
           </td>
         </tr>
           <% end %> 
