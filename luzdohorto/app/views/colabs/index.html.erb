@@ -29,7 +29,8 @@
         <thead>
           <tr>           
             <th>Colaborador</th>
-            <th>Quantidade de Cadastros</th>
+            <th style="text-align: center;" width="25%">Qtd de Cadastros</th>
+            <th>Valor</th>
            <!-- <th>Colaborador ID</th>-->            
           </tr>
   </thead>
@@ -38,13 +39,17 @@
     <% @colabs.each do |colab| %>
       <tr style="font-size: 15px">
        <% if !@data_inicio.blank? and !@data_final.blank? %>
-          <td><%= colab.nomecompleto %></td>
-          <td><%= colab.count %></td>      
+          <td width="400px"><%= colab.nomecompleto %></td>
+          <td style="text-align: center;"><%= colab.count %></td>
+          <td>R$ <%= colab.valor%></td>     
       <%else%>
-          <td><%= colab.nomecompleto %></td>
-          <td><%= colab.count %></td>
-      <%end%>       
+          <td  width="300px"><%= colab.nomecompleto %>
+          <td style="text-align: center;"><%= colab.count %></td>
+          <td>R$ <%= colab.valor%></td>
+      <%end%> 
+            
       </tr>
+
     <% end %>
   </tbody>
 </table>

@@ -1,4 +1,5 @@
 class ColabsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_colab, only: [:show, :edit, :update, :destroy]
 
   # GET /colabs
