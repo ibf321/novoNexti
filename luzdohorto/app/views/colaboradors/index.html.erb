@@ -34,9 +34,9 @@
           </tbody>
         </table>
         <center>
-          <%= link_to 'Cadastrar novo Colaborador', new_colaborador_path, class: 'btn btn-primary' %>
+          <%= link_to 'Cadastrar novo Colaborador', new_colaborador_path, class: 'btn btn-primary btn-sm' %>
           <% if current_user.role == "admin"%>
-            <%= link_to 'Relatório dos Colaboradores', colabs_path, class: 'btn btn-warning' %>
+            <%= link_to 'Relatório dos Colaboradores', colabs_path, class: 'btn btn-warning btn-sm' %>
           <% end %>          
         </center>
       </div>

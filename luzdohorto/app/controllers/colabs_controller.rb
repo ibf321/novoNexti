@@ -9,6 +9,7 @@ class ColabsController < ApplicationController
     @data_final = params[:data_final]
     
     @colabs = Colab.buscaColabs(@data_inicio, @data_final)
+    
   end  
   #
   
