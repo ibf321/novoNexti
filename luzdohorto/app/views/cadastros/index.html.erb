@@ -14,21 +14,22 @@
   <br>
   <br>
   <div>
-    <div class="col-lg-12">
+    <div class="col-lg-12 ">
       <table class="table table-striped ">
         <thead >
-          <tr class="titulotabela">
+          <tr class="titulotabela" style="height: 30px;">
             <th class="colunacontador"  style="border-color: black">#</th>           
-            <th style="border-color: black">Id Cliente ENEL</th>
-            <th style="border-color: black" width="20px">Codigo Ocorrencia</th>
-            <th style="border-color: black" width="100px">Valor</th>
-            <th style="border-color: black">Parcelas</th>
+            <th style="border-color: black; text-align: center;">Id Cliente ENEL</th>
+            <th style="border-color: black; text-align: center;" width="20px">Codigo Ocorrencia</th>
+            <th style="border-color: black; text-align: center;" width="100px">Valor</th>
+            <th style="border-color: black; text-align: center;">Parcelas</th>
             <%if current_user.role == "admin" %>
-            <th style="border-color: black">Autor</th>
-            <th style="border-color: black">Data do Cadastro</th>   
-            <th class="border-right-1" colspan="2" style="border-color: black">Protocolo</th>            
-            <th style="border-color: black"><a href="#" class="btn btn-primary btn-md disabled" role="button" aria-disabled="true">Total de registros <span class="badge badge-warning"> <%= @cadastros.total_count %> </span></a></th>     
-            <% end %>
+            <th style="border-color: black; text-align: center;">Autor</th>
+            <%end%>
+            <th style="border-color: black; text-align: center;">Data do Cadastro</th>   
+            <th class="border-right-1" colspan="2" style="border-color: black; text-align: center;">Protocolo</th>            
+            <th style="border-color: black; text-align: center;"><h4><span class="badge badge-pill badge-info">Total de registros <span class="badge badge-warning"> <%= @cadastros.total_count %> </span></span></h4></th>     
+            
           </tr>
         </thead>
         <tbody>
@@ -42,9 +43,10 @@
             <td class="conteudotabela"> R$ <%= cadastro.valor %></td>
             <td align="center" class="conteudotabela"><%= cadastro.parcelas %></td>
             <%if current_user.role == "admin"%>
-            <td><a href="#" class="btn btn-info btn-sm disabled" role="button" aria-disabled="true"><%= cadastro.user.username%></a></td>
-            <td align="center" class="conteudotabela"><%= cadastro.data_ocorrencia.strftime("%d / %m / %Y") %></td>
+            <td><span class="badge badge-pill badge-info"><%= cadastro.user.username%></span></td>
             <% end %>
+            <td align="center" class="conteudotabela"><%= cadastro.data_ocorrencia.strftime("%d / %m / %Y") %></td>
+            
             <td align="center" colspan="2" class="conteudotabela "><%= cadastro.livre %></td>            
             <td align="center">
               <%= link_to'Ver', cadastro,class: 'btn btn-info btn-sm' %>
@@ -57,4 +59,4 @@
     </table>    
   </div>  
 </div>
-<div class="col-lg-6"><%= paginate @cadastros %></div>
+<div class="paginacao"><%= paginate @cadastros %></div>

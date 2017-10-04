@@ -5,4 +5,8 @@ class Colaborador < ApplicationRecord
   paginates_per 20
 
   validates_presence_of :nomecompleto, :telefone, :endereco, :nomereduzido
+  validates :nomecompleto, uniqueness: true
+  validates :nomereduzido, uniqueness: true
+ 
+
 end

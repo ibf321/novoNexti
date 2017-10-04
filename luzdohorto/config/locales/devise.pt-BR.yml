@@ -59,3 +59,13 @@ pt-BR:
       not_saved:
         one: "O E-mail ou Username já está em uso."
         other: "O E-mail ou Username já está em uso."
+
+
+
+        # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+# Utilize-o em 'config/locales/', com o nome de 'devise.pt-BR.yml'.
+# Em 'config/application.rb', utilize => config.i18n.default_locale = :'pt-BR'
+
+
+

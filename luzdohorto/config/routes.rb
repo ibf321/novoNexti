@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cont_users/new'
+
+  get 'cont_users/create'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :colabs
   resources :colaboradors

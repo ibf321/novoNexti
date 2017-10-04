@@ -1,51 +1,55 @@
-<div class="cadastro" style="font-size: 15px">
+<div class="container-fluid col-xl-4 rounded border border-secondary" style="background-color: #FAFAFA; font-size: 15px">
   <div> <br> <br> <h1 align="center" class="enunciado"> Informações </h1></div>
   <br>
   <br>
-  <div class="container-fluid col-xl-4">
+  <div class="container-fluid col-xl-10">
     <div >
       <div><b class="textoshow">Id Cliente:</b>&nbsp;<texto> <%= @cadastro.id_cliente_coelce %> </texto></div>
     </div>
     <br>
     <div>
-      <div ><b class="textoshow">Digito Verificador Cliente Coelce:</b>&nbsp;<texto>  <%= @cadastro.digito_verificador_cliente_coelce %><texto></div>
+      <div ><b class="textoshow">Digito Verificador Cliente Coelce:</b>&nbsp;<texto>  <%= @cadastro.digito_verificador_cliente_coelce %></texto></div>
     </div>
     <br>
     <div>
-      <div ><b class="textoshow">Código Ocorrência:</b>&nbsp;<texto> <%= @cadastro.codigo_ocorrencia %><texto></div>
+      <div ><b class="textoshow">Código Ocorrência:</b>&nbsp;<texto> <%= @cadastro.codigo_ocorrencia %></texto></div>
     </div>
     <br>
     <div>
-      <div><b class="textoshow">Data Ocorrência:</b>&nbsp;<texto> <%= @cadastro.data_ocorrencia.strftime("%d / %m / %Y")%><texto></div>
+      <div><b class="textoshow">Data Ocorrência:</b>&nbsp;<texto> <%= @cadastro.data_ocorrencia.strftime("%d / %m / %Y")%></texto></div>
+    </div>
+    
+    <br>
+    <div>
+      <div><b class="textoshow">Valor:</b>&nbsp;<texto> R$ <%= @cadastro.valor %></texto></div>
     </div>
     <br>
     <div>
-      <div><b class="textoshow">Valor:</b>&nbsp;<texto> R$ <%= @cadastro.valor %><texto></div>
+      <div><b class="textoshow">Parcelas:</b>&nbsp;<texto>   <%= @cadastro.parcelas %></texto></div>
     </div>
     <br>
     <div>
-      <div><b class="textoshow">Parcelas:</b>&nbsp;<texto>   <%= @cadastro.parcelas %><texto></div>
-    </div>
-    <br>
-    <div>
-      <div><b class="textoshow">Protocolo:</b>&nbsp;<texto>  <%= @cadastro.livre %><texto> </div>
+      <div><b class="textoshow">Protocolo:</b>&nbsp;<texto>  <%= @cadastro.livre %></texto> </div>
     </div>
     <br>
     <% if !@cadastro.colabs.blank? %>
         <div>
-          <div><b class="textoshow">Colaborador:</b><texto> <%= @cadastro.colabs[0].colaborador.nomereduzido %><texto></div>
+          <div><b class="textoshow">Colaborador:</b><texto> <%= @cadastro.colabs[0].colaborador.nomereduzido %></texto></div>
         </div>
     <% end %>
     <br>
     <td>
+
     <center>
       <%=link_to 'Voltar', root_path, class: 'btn-sm btn-info'%>
       <%=link_to 'Cadastrar Novamente', new_cadastro_path, class: 'btn-sm btn-success'%>
       <!-- <% if current_user.role == "admin" %>
       <%= link_to 'Excluir', cadastro_path(@cadastro), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o registro?' } %> -->
+
     </center>
+    <br>
     </td>
   </div>
+  <% end %>
 </div>
-
-<% end %>
+</div>

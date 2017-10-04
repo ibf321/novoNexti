@@ -1,67 +1,70 @@
 <%= form_for(cadastro) do |f| %>
 <% if cadastro.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
-  <ul>
-    <% cadastro.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
+<center>
+  <div id="error_explanation" class="alert alert-danger" style="width: 500px">
+    <h2><%= pluralize(cadastro.errors.count, "erro(s)") %> encontrado(s):</h2>
+    
+      <% cadastro.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+      <% end %>
+    
+  </div>
+</center>
 <% end %>
 
     <div class="page-header">
       <h1 align="center" class="enunciado">Doador</h1>
     </div>
     <br>
-      <div class="container-fluid col-xl-4">
-        <form>      
+      <div class="container-fluid col-xl-4 rounded border border-secondary" style="background-color: #FAFAFA; height: 600px; width: 600px;">
+      <br>
+        <form style="vertical-align: middle;">      
           <div class="form-group row">            
              <label class="col-sm-4 col-form-label font-weight-bold textolabels">ID do cliente ENEL</label>       
-              <div class="col-xs-10">
-                <%= f.number_field :id_cliente_coelce, :max =>9999999999, required: true,class: "form-control"%>  
+              <div class="col-md-8">
+                <%= f.number_field :id_cliente_coelce, class: "form-control"%>  
               </div>          
           </div>
            <div class="form-group row">                         
                 <label class="col-sm-4 col-form-label font-weight-bold textolabels">Digito Verificador  </label>
-                <div class="col-xs-10">
+                <div class="col-md-8">
                   <%= f.number_field :digito_verificador_cliente_coelce, class: "form-control "%>              
                 </div>
           </div>
           <div class="form-group row">                         
                 <label class="col-sm-4 col-form-label font-weight-bold textolabels ">Código de ocorrência  </label>
-                <div class="col-xs-10">
-                  <%= f.number_field :codigo_ocorrencia, :max => 99,required: true, class: "form-control" %>              
+                <div class="col-md-8">
+                  <%= f.number_field :codigo_ocorrencia, class: "form-control" %>              
                 </div>
           </div> 
           <div class="form-group row">               
                 <label class="col-sm-4 col-form-label font-weight-bold textolabels">Data de Ocorrência  </label>
-                <div class="col-xs-10">
-                  <%= f.date_select :data_ocorrencia, :order => [:day, :month, :year], :use_month_names=>["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],class: "form-control", type:"date"%>            
+                <div class="col-md-8">
+                  <%= f.date_select :data_ocorrencia, :order => [:day, :month, :year], class:'form-control', type:"date"%>            
                 </div>
          </div>
           <div class="form-group row">               
               <label class="col-sm-4 col-form-label font-weight-bold textolabels">Valor  </label>
-              <div class="col-xs-10">
-                <%= f.number_field :valor, :step => 0.01, required: true, class: "form-control"%>
+              <div class="col-md-8">
+                <%= f.number_field :valor, :step => 0.01, class: "form-control"%>
               </div>
           </div>
           <div class="form-group row">
               <label class="col-sm-4 col-form-label font-weight-bold textolabels">Número de Parcelas  </label>
-              <div class="col-xs-10">
-                <%= f.number_field :parcelas, required: true, class: "form-control"%>          
+              <div class="col-md-8">
+                <%= f.number_field :parcelas, class: "form-control"%>          
               </div>
           </div>
           <div class="form-group row">
              <label class="col-sm-4 col-form-label font-weight-bold textolabels">Caso haja, digite o número de protocolo  </label>
-             <div class="col-xs-10">
-              <%= f.text_area:livre, class: "form-control"%>
+             <div class="col-md-8">
+              <%= f.text_area :livre, class:'form-control'%>
             </div>
           </div>
           <div class="form-group row">
               <label class="col-sm-4 col-form-label font-weight-bold textolabels">Caso haja um colaborador, selecione</label>
-              <div class="col-xs-10">
-                <%= select("colaborador", "colaborador_id", Colaborador.all.collect {|p| [ p.nomereduzido, p.id ] }, { include_blank: true, prompt: true}) %>
+              <div class="col-md-8">
+                <%= select("colaborador", "colaborador_id", Colaborador.all.collect {|p| [ p.nomereduzido, p.id ] }, { include_blank: false, prompt: true}, class:'form-control') %>
               </div>
           </div>  
           <br>

@@ -3,7 +3,7 @@ class RelatoriosController < ApplicationController
 	before_action :set_relatorio, only: [:show, :edit, :update, :destroy, :download]
 
 	def index
-		@relatorios  = Relatorio.all.order("created_at DESC")
+		@relatorios  = Relatorio.all.order("created_at DESC").page params['page']
 	end
 
 	def show
@@ -41,19 +41,19 @@ class RelatoriosController < ApplicationController
 			end
 		end
 		@relatorio.generate	 @instituicao
-		@relatorio.save	
+		@relatorio.save
 		redirect_to relatorios_url
 
-	end 
+	end
 
-	
+
 	def download
 		content = @relatorio.registroA + @relatorio.registroD+ @relatorio.registroZ
 		send_data(content, :filename => @relatorio.file_name)
 	end
 
 
-	private 
+	private
 
 	def set_relatorio
 		@relatorio = Relatorio.find(params[:id])
@@ -68,8 +68,8 @@ class RelatoriosController < ApplicationController
 	end
 
 	def is_created_instiuicao
-		@instituicao = Instituico.first		
+		@instituicao = Instituico.first
 		@instituicao != nil
 	end
-	
+
 end

@@ -3,15 +3,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable :registerable (habilita sign_up)
   has_many :cadastros
   enum role: {normal_user: 0, admin: 1}
+  validates :username, uniqueness: true
+  paginates_per 20
 
-  
-    
+
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, 
+         :recoverable, :rememberable, :trackable,
          :validatable, :authentication_keys => [:login]
 
   attr_accessor :login
-  
+
   def self.find_first_by_auth_conditions(warden_conditions)
 	  conditions = warden_conditions.dup
 	  if login = conditions.delete(:login)
@@ -21,6 +22,5 @@ class User < ApplicationRecord
 	  end
   end
 
- 
 
 end

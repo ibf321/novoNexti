@@ -1,18 +1,18 @@
 class Relatorio < ApplicationRecord
 	has_many :cadastros_relatorios, :dependent => :delete_all
-
+	paginates_per 20
 	#Function to Formater number decimal to n decimal with zeros
 	def fnd(n, number)
 		"%0#{n}d" % number
 	end
-	
+
 	def generate instituicao
 		i = instituicao
 		generateDate   = created_at.strftime("%Y%m%d")
-		self.file_name = "CEX.ALDHT.#{generateDate}.SOL"		
+		self.file_name = "CEX.ALDHT.#{generateDate}.SOL"
 		self.registroA      = "A2#{fnd(2,i.codigo_produto)}#{i.nome_instituicao}#{generateDate}#{fnd(6,self.id)}"
-		self.registroD      = ""		
-		self.registro_total = 2 	#2 no caso se refere ao registro do tipo e A e Registro do Tipo Z	
+		self.registroD      = ""
+		self.registro_total = 2 	#2 no caso se refere ao registro do tipo e A e Registro do Tipo Z
 		self.valor_total    = 0
 		self.cadastros_relatorios.each do |c|
 			valor= c.valor.round(2)* 100 # considera apenas os dois prinmeiros digitos apos a virgula

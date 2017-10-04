@@ -1,19 +1,21 @@
-<%= form_for(colaborador) do |f| %>
+<%= form_for(@colaborador) do |f| %>
   <% if colaborador.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(colaborador.errors.count, "error") %> prohibited this colaborador from being saved:</h2>
+<center>
+  <div id="error_explanation" class="alert alert-danger" style="width: 500px">
+      <h2><%= pluralize(colaborador.errors.count, "erro(s)") %> encontrado(s):</h2>
 
-      <ul>
+      
       <% colaborador.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+       <p><%= message %></p>
       <% end %>
-      </ul>
-    </div>
+      
+  </div>
+</center>
   <% end %>
 
   
   <br>
-  <div class="container-fluid col-xl-4">
+  <div class="container-fluid col-xl-4 rounded border border-secondary" style="background-color: #FAFAFA;">
       <h1 align="center" class="enunciado">Colaborador</h1>
     <br>
     <form >
@@ -50,3 +52,5 @@
     <%= link_to 'Voltar', colaboradors_path, :class => 'btn btn-warning btn-sm'%>
   </div>
 <% end %>
+<br>
+</div>

@@ -1,9 +1,9 @@
 class ContUsersController < ApplicationController
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
   #before_action :redirect_to_root, :if => :signed_in?
 
   def index
-    @users = User.all.order('username ASC')
+    @users = User.all.order('username ASC').page params['page']
     authorize @users
   end
 
@@ -31,13 +31,11 @@ class ContUsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
-    if @user.update_attributes(params[user_params])
-      sign_in(@user, :bypass => true) if @user == current_user
-      redirect_to @user, :flash => { :success => 'User was successfully updated.' }
-    else
-      render :action => 'edit'
-    end
+     if @user.update(user_params)
+       redirect_to adminpanel_path
+     else
+       render 'edit'
+     end
   end
 
   def destroy
@@ -48,8 +46,11 @@ class ContUsersController < ApplicationController
   end
 
   private
+    def set_user
+        @user = User.find(params[:id])
+    end
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :role)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :role)
     end
 
     def signed_in?
@@ -60,4 +61,3 @@ class ContUsersController < ApplicationController
       redirect_to root_path
     end
 end
-

@@ -1,31 +1,39 @@
 <div class="container">
-    <div class="row"> 
-     <div class="col-lg-12">     
-        <h1 align="center" class="enunciado">Colaboradores</h1> 
-      </div>      
+    <div class="row">
+     <div class="col-lg-12">
+        <h1 align="center" class="enunciado">Colaboradores</h1>
+      </div>
     </div>
     <br>
    <div class="row">
     <div class="col-lg-12">
+      <center>
+        <%= link_to 'Cadastrar novo Colaborador', new_colaborador_path, class: 'btn btn-primary' %>
+        <% if current_user.role == "admin"%>
+        <%= link_to 'Relatório dos Colaboradores', colabs_path, class: 'btn btn-warning' %>
+        <% end %>
+      </center>
+      <br>
       <table class="table table-striped">
          <thead>
             <tr>
-              <th>Nome Completo</th>
-              <th>Telefone</th>
-              <th> </th>
-              <th>Nome reduzido</th>                          
+              <th style="text-align: center;">Nome Completo</th>
+              <th style="text-align: center;">Telefone</th>
+
+              <th style="text-align: center;">Nome reduzido</th>
             </tr>
           </thead>
 
           <tbody>
             <% @colaboradors.each do |colaborador| %>
               <tr style="font-size: 15px">
-                <td class="conteudotabela"><%= colaborador.nomecompleto %></td>                
+                <td class="conteudotabela"><%= colaborador.nomecompleto %></td>
                 <td class="conteudotabela"><%= colaborador.telefone %></td>
-                <td> </td>
-                <td class="conteudotabela"><%= colaborador.nomereduzido %></td>                
+
+                <td class="conteudotabela"><%= colaborador.nomereduzido %></td>
                 <td class="conteudotabela"><%= link_to 'Ver', colaborador, class: 'btn btn-info btn-sm' %>
-                <%= link_to 'Editar', edit_colaborador_path(colaborador),class: 'btn btn-success btn-sm' %></td>
+                <%= link_to 'Editar', edit_colaborador_path(colaborador),class: 'btn btn-success btn-sm' %>
+                </td>
                 <!-- <%if current_user.role == "admin" %>
                   <%= link_to 'Excluir', colaborador, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class:'btn btn-danger btn-sm' %></td>
                 <%end%> -->
@@ -33,15 +41,7 @@
             <% end %>
           </tbody>
         </table>
-        <center>
-          <%= link_to 'Cadastrar novo Colaborador', new_colaborador_path, class: 'btn btn-primary' %>
-          <% if current_user.role == "admin"%>
-            <%= link_to 'Relatório dos Colaboradores', colabs_path, class: 'btn btn-warning' %>
-          <% end %>          
-        </center>
       </div>
 <center><%= paginate @colaboradors %></center>
 <br>
-
-
-
+</div>

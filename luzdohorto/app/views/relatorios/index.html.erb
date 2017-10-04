@@ -3,7 +3,8 @@
     <div>
       <h1 align="center" class="enunciado">Relatórios</h1>
   </div>
-
+  <center><%=link_to 'Novo Relatório', new_relatorio_path, class:"btn btn-primary"%></center>
+  <br>
 <div class="container_relatorio">
   <div class="row">
     <div class="col-lg-12">
@@ -13,7 +14,7 @@
             <th>Nome do Relatório</th>
             <th>Inicio</th>
             <th>Final</th>
-            <th>Download</th>          
+            <th>Download</th>
           </tr>
         </thead>
         <tbody>
@@ -22,14 +23,14 @@
             <td><%=relatorio.file_name%></td>
             <td><%=relatorio.data_inicio.strftime("%d / %m / %Y")%></td>
             <td><%=relatorio.data_final.strftime("%d / %m / %Y")%></td>
-            <td> <%= button_to 'Download', {:action => :download, :id => relatorio.id}, {class: 'ls-btn-xs'}%>
-            </td>        
+            <td> <%= button_to 'Download', {:action => :download, :id => relatorio.id}, {class: 'btn btn-outline-success btn-sm'}%>
+            </td>
           </tr>
           <% end %>
         </tbody>
       </table>
       <hr>
-       <center><%=link_to 'Novo Relatório', new_relatorio_path, class:"btn btn-primary"%></center>
     </div>
   </div>
 </div>
+<center><%= paginate @relatorios %></center>

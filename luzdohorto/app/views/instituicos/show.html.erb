@@ -1,6 +1,6 @@
-<div class="cadastro" style="font-size: 15px">
+<div class="container-fluid col-xl-5 rounded border border-secondary" style="background-color: #FAFAFA; font-size: 15px">
   <div class="page-header"> <br> <br> <h1 align="center" class="enunciado"> Informações </h1></div>
-  <div class="container-fluid col-xl-4">
+  <div class="container-fluid col-xl-10">
   <br>     
   	<div >
       <div ><b class="textoshow">Nome Instituição:</b>&nbsp;<texto> <%= @instituico.nome_instituicao %></texto></div>
@@ -23,5 +23,7 @@
       <%=link_to 'Voltar', instituicos_path, class: 'btn-sm btn-info'%> 
       <%= link_to 'Excluir', instituico_path(@instituico), class: 'btn-sm btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o registro?' } %>
     </td>
+
   </div>
+  <br>
 </div>
