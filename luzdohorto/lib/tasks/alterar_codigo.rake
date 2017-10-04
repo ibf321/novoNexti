@@ -8,7 +8,7 @@ namespace :app do
 		end
 		Cadastro.find_each do |cadastro|
 			puts "Alterando o campo codigo_ocorrencia"
-			cadastro.codigo_ocorrencia = "60"
+			cadastro.codigo_ocorrencia = "53"
 			cadastro.save!
 		end
 	end

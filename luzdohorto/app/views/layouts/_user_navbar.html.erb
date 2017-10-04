@@ -7,10 +7,18 @@
               <a ><%=link_to 'Inicio', root_path, class:"textonavbar" %></a>&nbsp;&nbsp;&nbsp;&nbsp;
               <a><%=link_to 'Cadastrar' , new_cadastro_path, class:"textonavbar" %>&nbsp;&nbsp;&nbsp;&nbsp;</a>
               <% if current_user.role == "admin"%>
+<<<<<<< HEAD
                  <a><%=link_to 'Usuários', cont_users_index_path, class:"textonavbar" %>&nbsp;&nbsp;&nbsp;&nbsp;</a>
                  <a><%=link_to 'Relatórios', relatorios_path, class:"textonavbar"%> &nbsp;&nbsp;&nbsp;&nbsp;</a>
                  <a><%=link_to 'Novo Relatório', new_relatorio_path, class:"textonavbar"%>&nbsp;&nbsp;&nbsp;&nbsp;</a>
                  <a><%=link_to 'Instituição', instituicos_path, class:"textonavbar"%>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+=======
+                 <a><%=link_to 'Usuários', cont_users_index_path, class:"textonavbar" %>&nbsp;&nbsp;</a>
+                 <a><%=link_to 'Relatórios', relatorios_path, class:"textonavbar"%> &nbsp;&nbsp;</a>
+                 <a><%=link_to 'Novo Relatório', new_relatorio_path, class:"textonavbar"%>&nbsp;&nbsp;</a>
+                 <a><%=link_to 'Instituição', instituicos_path, class:"textonavbar"%>&nbsp;&nbsp;</a>
+                 <a><%=link_to 'Admin', rails_admin_path, class:"textonavbar"%>&nbsp;&nbsp;</a>
+>>>>>>> 86c8775042aefaca82e1da1dc368bb51787aa07b
               <% end %>        
               <a><%=link_to 'Colaboradores', colaboradors_path, class:"textonavbar"%>&nbsp;&nbsp;&nbsp;&nbsp;</a>
               <a><%=link_to "Editar Perfil", edit_user_registration_path, class:"textonavbar" %>&nbsp;&nbsp;&nbsp;&nbsp;</a>

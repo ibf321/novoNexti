@@ -1,0 +1,21 @@
+"pt-BR":
+  activerecord:
+    models:
+      user: "Usuários"
+      dashboard: 'teste'
+      
+    attributes:
+      user:
+        email : "Email"
+        username: "Nome do Usuário"
+        password: "Senha"
+        password_confirmation: "Confime sua Senha"
+        role: "Tipo de Usuário"
+        reset_password_sent_at: "Redifinição de Senha"
+        sign_in_count: "Sessões Iniciadas"
+        current_sign_in_at: "Ultimo login"
+        last_sign_in_a: "Último registro em um"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        
+  

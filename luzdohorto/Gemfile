@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'pundit'
 gem 'kaminari'
+gem 'rails_admin', '~> 1.2'
+gem 'cancancan', '~> 1.15.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

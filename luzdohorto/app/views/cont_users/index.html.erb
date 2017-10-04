@@ -13,11 +13,20 @@
 <div class="row">
     <div class="col-lg-12">
       <table class="table table-striped">
+<<<<<<< HEAD
         <thead style="height: 15px;">
           <tr class="titulotabela" >  
             <th style="border-color: black; text-align: center; height: 15px"><p align="center">Usuário</p></th>
             <th style="border-color: black; text-align: center;"><p align="center">Tipo de Usuário</p></th>
             <th style="border-color: black; text-align: center;"><p align="center">E-Mail</p></th>                                         
+=======
+        <thead>
+          <tr>  
+            <th width="150"><p align="center">Usuário</p></th>
+            <th width="150"><p align="center">Tipo de Usuário</p></th>
+            <th width="150"><p align="center">E-Mail</p></th> 
+            <th width="150"><p align="center">Editar</p></th>                                            
+>>>>>>> 86c8775042aefaca82e1da1dc368bb51787aa07b
           </tr> 
         </thead>
         <tbody>
@@ -25,7 +34,8 @@
           <tr class="conteudotabela">              
             <td align="center"><%= user.username %></td>
             <td align="center"><%= user.role %></td>                                                        
-            <td align="center"><%= user.email %></td>  
+            <td align="center"><%= user.email %></td>
+            <td align="center"> <%=link_to 'Editar', "/admin/user/#{user.id}/edit" , class: 'btn btn-warning'%></td>  
           </td>
         </tr>
           <% end %> 
