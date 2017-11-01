@@ -1,6 +1,6 @@
 class Relatorio < ApplicationRecord
 	has_many :cadastros_relatorios, :dependent => :delete_all
-	paginates_per 20
+
 	#Function to Formater number decimal to n decimal with zeros
 	def fnd(n, number)
 		"%0#{n}d" % number

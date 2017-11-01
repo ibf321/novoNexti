@@ -4,7 +4,7 @@ class InstituicosController < ApplicationController
   # GET /instituicos
   # GET /instituicos.json
   def index
-    @instituicos = Instituico.all
+    @instituicos = Instituico.all.page params['page']
   end
 
   # GET /instituicos/1

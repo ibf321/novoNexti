@@ -1,32 +1,42 @@
 <div class="container">
     <div class="row">
-     <div class="col-lg-12">
-        <h1 align="center" class="enunciado">Colaboradores</h1>
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 align="center" class="enunciado">Lista de Usuários</h1>
+        </div>
       </div>
     </div>
-    <br>
-   <div class="row">
+
+<div class="row">
     <div class="col-lg-12">
       <table class="table table-striped">
-         <thead>
-            <tr>
-              <th style="border-color: black; text-align: center; height: 15px"><p align="center">Usuário</p></th>
-              <th style="border-color: black; text-align: center;"><p align="center">Tipo de Usuário</p></th>
-              <th style="border-color: black; text-align: center;"><p align="center">E-Mail</p></th>
-            </tr>
-          </thead>
+        <div class="center" align="center">
+        <%= link_to 'Novo', "/admin/user/new" , :class => 'btn btn btn-info' %>
+        <div>
 
-          <tbody>
-            <% @users.each do |user| %>
-              <tr style="font-size: 15px">
-                <td class="conteudotabela"><%= user.username %></td>
-                <td class="conteudotabela"><%= user.role %></td>
-                <td class="conteudotabela"><%= user.email %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-<center><%= paginate @users %></center>
-<br>
-</div>
+          <br>
+
+        <thead>
+          <tr>
+            <th width="150"><p align="center">Usuário</p></th>
+            <th width="150"><p align="center">Tipo de Usuário</p></th>
+            <th width="150"><p align="center">E-Mail</p></th>
+            <th width="150"><p align="center">Tipo</p></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr class="conteudotabela">
+            <td align="center"><%= user.username %></td>
+            <td align="center"><%= user.role %></td>
+            <td align="center"><%= user.email %></td>
+            <!-- <td align="center"><%=link_to 'Editar', "/admin/user/#{user.id}/edit" , class: 'btn btn-warning'%></td> -->
+            <td align="center"><%=link_to 'Editar',  "/admin/user/#{user.id}/edit"  , class: 'btn btn-warning'%></td>
+          </td>
+        </tr>
+
+          <% end %>
+      </tbody>
+    </table>
+
+  </div>

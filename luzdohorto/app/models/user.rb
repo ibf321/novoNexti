@@ -3,8 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable :registerable (habilita sign_up)
   has_many :cadastros
   enum role: {normal_user: 0, admin: 1}
+
   validates :username, uniqueness: true
-  paginates_per 20
+  validates :email, uniqueness: true
+
 
 
   devise :database_authenticatable, :registerable,
@@ -21,6 +23,7 @@ class User < ApplicationRecord
 	    where(conditions).first
 	  end
   end
+
 
 
 end

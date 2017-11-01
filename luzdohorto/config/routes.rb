@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
-  get 'cont_users/new'
-
-  get 'cont_users/create'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :colabs
   resources :colaboradors
   resources :instituicos
+
   get 'cont_users/index'
   get 'cont_users/new'
   get 'cont_users/edit'
-  
+
 
   post 'savenew', to: 'users#savenew'
-  
+
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
-  
+
   resources :cadastros
 
   resources :relatorios

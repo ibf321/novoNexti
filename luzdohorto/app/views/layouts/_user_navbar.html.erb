@@ -1,7 +1,7 @@
   <nav class="navbar  bg-light fixed-top">
       <div class="container col-sm-8">
-         <div class="row"> 
-            <a><%=link_to 'Luz Do Horto ', root_path, class:"textonavbrand" %></a>    
+         <div class="row">
+            <a><%=link_to 'Luz Do Horto ', root_path, class:"textonavbrand" %></a>
           </div>
           <div class="row">
               <a ><%=link_to 'Inicio', root_path, class:"textonavbar" %></a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -11,12 +11,12 @@
                  <a><%=link_to 'Relatórios', relatorios_path, class:"textonavbar"%> &nbsp;&nbsp;</a>
                  <a><%=link_to 'Novo Relatório', new_relatorio_path, class:"textonavbar"%>&nbsp;&nbsp;</a>
                  <a><%=link_to 'Instituição', instituicos_path, class:"textonavbar"%>&nbsp;&nbsp;</a>
-                 <!-- <a><%=link_to 'Admin', rails_admin_path, class:"textonavbar"%>&nbsp;&nbsp;</a> -->
-              <% end %>        
+                 
+              <% end %>
               <a><%=link_to 'Colaboradores', colaboradors_path, class:"textonavbar"%>&nbsp;&nbsp;&nbsp;&nbsp;</a>
               <a><%=link_to "Editar Perfil", edit_user_registration_path, class:"textonavbar" %>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-              <a><%=link_to "Sair", destroy_user_session_path, :method => :delete, class:"textonavbar"%>&nbsp;&nbsp;&nbsp;&nbsp;</a>     
-          </div> 
+              <a><%=link_to "Sair", destroy_user_session_path, :method => :delete, class:"textonavbar"%>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          </div>
       </div>
   </nav>
   <br>
@@ -24,6 +24,3 @@
   <br>
   <br>
   <br>
-
-
-

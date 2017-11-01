@@ -4,8 +4,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   def savenew
-    sql = "insert into users (name,email, created_at,updated_at) values( 
-        #{ActiveRecord::Base.connection.quote(user_params[:name])}, 
+    sql = "insert into users (name,email, created_at,updated_at) values(
+        #{ActiveRecord::Base.connection.quote(user_params[:name])},
         #{ActiveRecord::Base.connection.quote(user_params[:email])},now(), now())"
     ActiveRecord::Base.connection.execute(sql)
     redirect_to action: 'index'

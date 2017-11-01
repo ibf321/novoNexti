@@ -23,7 +23,6 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
-
   config.model User do
     create do
       field  :email
@@ -32,7 +31,7 @@ RailsAdmin.config do |config|
       field  :password_confirmation
       field  :role
     end
-  
+
     edit do
       field  :email
       field  :username

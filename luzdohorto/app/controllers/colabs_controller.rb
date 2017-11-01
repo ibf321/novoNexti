@@ -7,11 +7,12 @@ class ColabsController < ApplicationController
   def index
     @data_inicio = params[:data_inicio]
     @data_final = params[:data_final]
-    
-    @colabs = Colab.buscaColabs(@data_inicio, @data_final)
-  end  
+
+    @colabs = Colab.buscaColabs(@data_inicio, @data_final).page params['page']
+
+  end
   #
-  
+
    # GET /colabs/1
   # GET /colabs/1.json
   def show

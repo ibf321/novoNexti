@@ -17,6 +17,7 @@ class ContUsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    
   end
 
   def create
@@ -31,11 +32,13 @@ class ContUsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-     if @user.update(user_params)
-       redirect_to adminpanel_path
-     else
-       render 'edit'
-     end
+
+    if @user.update_attributes(params[user_params])
+      sign_in(@user, :bypass => true) if @user == current_user
+      redirect_to @user, :flash => { :success => 'User was successfully updated.' }
+    else
+      render :action => 'edit'
+    end
   end
 
   def destroy
@@ -46,11 +49,8 @@ class ContUsersController < ApplicationController
   end
 
   private
-    def set_user
-        @user = User.find(params[:id])
-    end
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :role)
+      params.require(:user).permit(:email, :password, :password_confirmation, :role)
     end
 
     def signed_in?
